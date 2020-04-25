@@ -20,11 +20,6 @@
       "prettier --write",
       "eslint --fix",
       "git add"
-    ],
-    "*.{less,css}": [
-      "prettier --write",
-      "stylelint",
-      "git add"
     ]
   },
   "dependencies": {
@@ -39,9 +34,11 @@
     "@types/react-dom": "^16.9.0",
     "@typescript-eslint/eslint-plugin": "^2.29.0",
     "@typescript-eslint/parser": "^2.29.0",
+    "antd-mobile": "^2.3.1",
     "babel-eslint": "10.1.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "8.1.0",
+    "babel-plugin-import": "^1.13.0",
     "babel-plugin-named-asset-import": "^0.3.6",
     "babel-preset-react-app": "^9.1.2",
     "camelcase": "^5.3.1",
@@ -101,7 +98,9 @@
     "prettier-stylelint": "^0.4.2",
     "stylelint": "^13.3.3",
     "stylelint-config-prettier": "^8.0.1",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint-config-standard": "^20.0.0",
+    "less": "^3.11.1",
+    "less-loader": "^6.0.0"
   },
   "browserslist": {
     "production": [
@@ -168,6 +167,15 @@
   "babel": {
     "presets": [
       "react-app"
+    ],
+    "plugins": [
+      [
+        "import",
+        {
+          "libraryName": "antd-mobile",
+          "style": "css"
+        }
+      ]
     ]
   }
 }
